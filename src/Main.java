@@ -61,4 +61,4 @@ class Solution {
         - diameter[0] = 5 vs 4+0 = 5. D[0] remains the same.
         - Return (4 vs 0) + 1 = 5 = maximum depth
 
-        - Demonstrated here that a node from subtree of root.left is has more vertices to traverse getting to another node in subtree of root.left than it does reaching the root in this unbalanced tree example
+        - Demonstrated here that a node from subtree of root.left is has more vertices to traverse getting to another node in subtree of root.left than it does reaching the root in this unbalanced tree example.

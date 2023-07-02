@@ -11,7 +11,7 @@ class Solution {
     public int diameterOfBinaryTree(TreeNode root) {
 
         // Create an array to hold the diameter of the tree
-        int diameter[] = new int[1];
+        int[] diameter = new int[1];
 
         // Recursively calculate the height of the tree and update the diameter array
         height(root,diameter);
@@ -20,7 +20,7 @@ class Solution {
         return diameter[0];
     }
 
-    public int height(TreeNode root, int diameter[]){
+    public int height(TreeNode root, int[] diameter){
 
         // Base case: if the root is null, the height is 0
         if(root == null){
@@ -35,7 +35,12 @@ class Solution {
         diameter[0] = Math.max(diameter[0],left + right);
 
         // Return the maximum depth of the current node by adding 1 to the maximum depth of its deepest subtree
-        return Math.max(left,right)+1;
+        // this returns height because that is the name of the method, but it has MUTATED the diameter array instantiated
+        // in primary method
+        return Math.max(left,right)+1; // incrementing hhappens here where leaf  left and right == null and returns 0
+        // so diamter = 0 + 0 = 0. this line height of subtree returned of 1 so that height can be compared to other
+        // subtree, which for simplicity sake in a perfect trree, is also 1. so (diamter [0] =0, 1+1 =2 ). diamter [0]
+        // updated to 2, etc.
     }
 }
 
